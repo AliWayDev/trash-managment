@@ -1,7 +1,13 @@
 import { Index } from "./routes/Index";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 function App() {
-  let token: string | null = 'dsydbgssyrgbgfysutrfbvsyrtfsvrfy';
+  const token = useSelector((state) => state.token.token);
+
+  useEffect(() => {
+    console.log(token);
+  }, [token]);
 
   return (
     <>
@@ -11,3 +17,4 @@ function App() {
 }
 
 export default App;
+  
