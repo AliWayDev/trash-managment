@@ -8,7 +8,8 @@ export const userSlice = createSlice({
   } as IUser,
 
   reducers: {
-    checkToken(state, action) {
+    checkToken(state, action
+      ) {
       if (action.payload?.length !== 0) {
         return (state.token = action.payload);
       }
