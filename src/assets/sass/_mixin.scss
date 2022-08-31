@@ -1,0 +1,16 @@
+@mixin bg {
+  background-image: url(../assets/img/bg-img/Concept-Background-IMG.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex($jc: flex-start) {
+  display: flex;
+  align-items: center;
+  justify-content: $jc;
+}
