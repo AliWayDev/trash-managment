@@ -2,14 +2,17 @@
 import { PrivateRoutes } from "./PrivateRoutes";
 import { PublicRoutes } from "./PublicRoutes";
 
-interface IProps {
-  token: string | null;
-}
+export const Index = () => {
+  const isThereToken = window.localStorage.getItem("token");
 
-export const Index = (props: IProps) => {
-  const { token } = props;
+  // useEffect(() => {
+  //   if (isThereToken != null) {
+  //     navigate("/");
+  //   }
+  // }, [isThereToken]);
 
-  const isUserLoggedIn = token ? <PrivateRoutes /> : <PublicRoutes />;
+  const isUserLoggedIn =
+    isThereToken != null ? <PrivateRoutes /> : <PublicRoutes />;
 
   return <>{isUserLoggedIn}</>;
 };

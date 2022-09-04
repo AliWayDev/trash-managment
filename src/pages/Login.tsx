@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "./../hooks/index";
 import { Link } from "react-router-dom";
 import Login_item from "../Components/Login-item";
 
@@ -8,22 +7,16 @@ import { checkToken } from "../store/slices/userSlice";
 
 export const Login = () => {
   const [fetch, { data }] = useLoginMutation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const login = () => {
     fetch({
       email: "eve.holt@reqres.in",
       password: "cityslicka",
+    }).then(() => {
+      dispatch(checkToken(data?.token));
     });
   };
-
-  useEffect(() => {
-    const checkUserLoggedIn = () => {
-      dispatch(checkToken(data?.token));
-    };
-
-    checkUserLoggedIn();
-  }, [data, dispatch]);
 
   return (
     <>

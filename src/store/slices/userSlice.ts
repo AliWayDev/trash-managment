@@ -8,13 +8,9 @@ export const userSlice = createSlice({
   } as IUser,
 
   reducers: {
-    checkToken(state, action
-      ) {
-      if (action.payload?.length !== 0) {
-        return (state.token = action.payload);
-      }
-
-      return null;
+    checkToken: (state, action) => {
+      window.localStorage.setItem("token", action.payload);
+      state.token = action.payload;
     },
   },
 });
