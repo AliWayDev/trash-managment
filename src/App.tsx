@@ -1,12 +1,15 @@
 import { Index } from "./routes/Index";
-import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 function App() {
-  const token = useSelector((state) => state.token.token);
+  const navigate = useNavigate();
+  let token: string | null = window.localStorage.getItem("token");
 
   useEffect(() => {
-    console.log(token);
+    if (token !== null) {
+      navigate("/");
+    }
   }, [token]);
 
   return (
@@ -17,4 +20,3 @@ function App() {
 }
 
 export default App;
-  

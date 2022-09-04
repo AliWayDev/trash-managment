@@ -9,7 +9,7 @@ interface IProps {
 export const Index = (props: IProps) => {
   const { token } = props;
 
-  const isUserLoggedIn = token ? <PrivateRoutes /> : <PublicRoutes />;
+  const isUserLoggedIn = token !== null ? <PrivateRoutes /> : <PublicRoutes />;
 
   return <>{isUserLoggedIn}</>;
 };

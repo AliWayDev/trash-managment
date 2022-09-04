@@ -1,13 +1,11 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useLoginMutation } from "../store/apis/auth.api";
-import { checkToken } from "../store/slices/userSlice";
 
 export const Login = () => {
+  const navigate = useNavigate();
   const [fetch, { data }] = useLoginMutation();
-  const dispatch = useDispatch();
 
   const login = () => {
     fetch({
@@ -17,12 +15,16 @@ export const Login = () => {
   };
 
   useEffect(() => {
-    const checkUserLoggedIn = () => {
-      dispatch(checkToken(data?.token));
+    const setToken = (token: string | null | undefined) => {
+      if (token != null) {
+        window.localStorage.setItem("token", token);
+
+        navigate("/");
+      }
     };
 
-    checkUserLoggedIn();
-  }, [data, dispatch]);
+    setToken(data?.token);
+  }, [data]);
 
   return (
     <>
