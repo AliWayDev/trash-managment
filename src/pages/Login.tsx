@@ -1,21 +1,30 @@
-import { useAppDispatch } from "./../hooks/index";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useLoginMutation } from "../store/apis/auth.api";
-import { checkToken } from "../store/slices/userSlice";
 
 export const Login = () => {
+  const navigate = useNavigate();
   const [fetch, { data }] = useLoginMutation();
-  const dispatch = useAppDispatch();
 
   const login = () => {
     fetch({
       email: "eve.holt@reqres.in",
       password: "cityslicka",
-    }).then(() => {
-      dispatch(checkToken(data?.token));
     });
   };
+
+  useEffect(() => {
+    const setToken = (token: string | null | undefined) => {
+      if (token != null) {
+        window.localStorage.setItem("token", token);
+
+        navigate("/");
+      }
+    };
+
+    setToken(data?.token);
+  }, [data]);
 
   return (
     <>
