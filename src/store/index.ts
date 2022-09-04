@@ -6,3 +6,6 @@ export const store = configureStore({
     [authApi.reducerPath]: authApi.reducer,
   },
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
