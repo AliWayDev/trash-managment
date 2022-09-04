@@ -1,12 +1,9 @@
 // Routes
 import { PrivateRoutes } from "./PrivateRoutes";
 import { PublicRoutes } from "./PublicRoutes";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 export const Index = () => {
   const isThereToken = window.localStorage.getItem("token");
-  const navigate = useNavigate();
 
   // useEffect(() => {
   //   if (isThereToken != null) {
