@@ -8,11 +8,11 @@ export const Index = () => {
   const isThereToken = window.localStorage.getItem("token");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (isThereToken != null) {
-      navigate("/");
-    }
-  }, [isThereToken]);
+  // useEffect(() => {
+  //   if (isThereToken != null) {
+  //     navigate("/");
+  //   }
+  // }, [isThereToken]);
 
   const isUserLoggedIn =
     isThereToken != null ? <PrivateRoutes /> : <PublicRoutes />;
