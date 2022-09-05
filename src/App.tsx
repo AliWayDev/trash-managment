@@ -10,7 +10,7 @@ function App() {
     if (token !== null) {
       navigate("/");
     }
-  }, [token]);
+  }, [token, navigate]);
 
   return (
     <>
