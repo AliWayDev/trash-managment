@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useLoginMutation } from "../store/apis/auth.api";
 
-export const Login = () => {
+export const Login: React.FC = () => {
   const navigate = useNavigate();
 
   //fetchs
