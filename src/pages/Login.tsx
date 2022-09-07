@@ -115,7 +115,7 @@ export const Login: React.FC = () => {
             />
           </Box>
           <Button onClick={login} variant="contained">
-            Login
+            Send
           </Button>
           <Box>
             <Typography
