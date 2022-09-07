@@ -1,28 +1,15 @@
-import { boards } from "../mock/Boards";
-import { useNavigate } from "react-router-dom";
+import { Box } from "@mui/material";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 export const Dashboard = () => {
-  const navigate = useNavigate();
-
-  const logOut = () => {
-    window.localStorage.removeItem("token");
-    navigate("/login");
-  };
-
-  let dashboardBorads = boards.map((board) => (
-    <div
-      style={{ display: "flex", borderBottom: "2px solid black" }}
-      key={board._id}
-    >
-      <h1>{board._id}</h1>
-      <h1>{board.title}</h1>
-    </div>
-  ));
+  // const logOut = () => {
+  //   window.localStorage.removeItem("token");
+  //   navigate("/login");
+  // };
 
   return (
-    <div>
-      <button onClick={logOut}>LogOut</button>
-      {dashboardBorads}
-    </div>
+    <Box>
+      <Sidebar />
+    </Box>
   );
 };
