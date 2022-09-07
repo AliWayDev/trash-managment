@@ -1,3 +1,7 @@
+# Trash managment
+![lOGO](https://user-images.githubusercontent.com/63801258/188873686-7190fa94-56ab-449e-a48e-d4a3cf399de4.jpg)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
