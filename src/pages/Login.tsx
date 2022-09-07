@@ -24,7 +24,7 @@ export const Login = () => {
     };
 
     setToken(data?.token);
-  }, [data]);
+  }, [data, navigate]);
 
   return (
     <>
