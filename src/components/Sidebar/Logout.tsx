@@ -7,22 +7,21 @@ import Box from "@mui/material/Box";
 
 const Logout = () => {
   const navigate = useNavigate();
-  const willLogout = async () => {
+
+  const logoutHandler = async () => {
     await swal({
       title: "Are you sure?",
       text: "Are you sure that you want to log-out from your profile?",
       icon: "warning",
       buttons: ["Cancel", "Ok!"],
       dangerMode: true,
-    }).then((willLogout:any) => {
-      if (willLogout) {
+    }).then((logoutHandler: any) => {
+      if (logoutHandler) {
         window.localStorage.removeItem("token");
         navigate("/login");
-      } else {
       }
     });
   };
-  //
 
   return (
     <Box
@@ -32,11 +31,9 @@ const Logout = () => {
         alignItems: "center",
         cursor: "pointer",
       }}
-      className="logOut"
-      onClick={willLogout}
+      onClick={logoutHandler}
     >
       <LogoutIcon sx={{ transform: "rotate(180deg)", marginRight: "8px" }} />{" "}
-      <h4 className="logOut__title">Log-out</h4>
     </Box>
   );
 };

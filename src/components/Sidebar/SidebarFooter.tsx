@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Box  from "@mui/material/Box/Box";
+import Box from "@mui/material/Box/Box";
 import Logout from "./Logout";
 import SettingMenu from "./SettingMenu";
 import Avatar from "@mui/material/Avatar/Avatar";
@@ -13,9 +13,11 @@ import { Image } from "mui-image";
 const SidebarFooter = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -46,7 +48,7 @@ const SidebarFooter = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
               >
-                <Avatar sx={{ width: 60, height: 60 }}>
+                <Avatar sx={{ width: 40, height: 40 }}>
                   <Image
                     src="https://res.cloudinary.com/dh2t0zrxd/image/upload/v1662729402/photo_2022-01-25_19-23-36_cswa3u.jpg"
                     alt="profile"
