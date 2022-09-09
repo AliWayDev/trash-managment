@@ -1,7 +1,7 @@
 import React from "react";
 
-import { MenuItem } from "@mui/material/";
-import ListItemIcon from "@mui/material/ListItemIcon";
+import MenuItem from "@mui/material/MenuItem/MenuItem";
+import ListItemIcon from "@mui/material/ListItemIcon/ListItemIcon";
 import Divider from "@mui/material/Divider/Divider";
 import SettingsIcon from "@mui/icons-material/Settings";
 import CircleNotificationsIcon from "@mui/icons-material/CircleNotifications";

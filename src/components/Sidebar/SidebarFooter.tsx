@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+import Box  from "@mui/material/Box/Box";
 import Logout from "./Logout";
 import SettingMenu from "./SettingMenu";
-import Avatar from "@mui/material/Avatar";
-import Menu from "@mui/material/Menu";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
+import Avatar from "@mui/material/Avatar/Avatar";
+import Menu from "@mui/material/Menu/Menu";
+import IconButton from "@mui/material/IconButton/IconButton";
+import Tooltip from "@mui/material/Tooltip/Tooltip";
 import Paper from "@mui/material/Paper";
 
 import { Image } from "mui-image";

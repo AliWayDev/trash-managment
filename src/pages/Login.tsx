@@ -1,4 +1,7 @@
-import { Box, Typography, TextField, Button } from "@mui/material";
+import Box from "@mui/material/Box/Box";
+import Typography from "@mui/material/Typography/Typography";
+import TextField from "@mui/material/TextField/TextField";
+import Button from "@mui/material/Button/Button";
 import { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 

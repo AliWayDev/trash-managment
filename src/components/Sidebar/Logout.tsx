@@ -2,7 +2,8 @@ import React from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
-import { Box } from "@mui/material";
+
+import Box from "@mui/material/Box";
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -11,12 +12,12 @@ const Logout = () => {
       title: "Are you sure?",
       text: "Are you sure that you want to log-out from your profile?",
       icon: "warning",
-      buttons: true,
+      buttons: ["Cancel", "Ok!"],
       dangerMode: true,
-    }).then((willLogout) => {
+    }).then((willLogout:any) => {
       if (willLogout) {
         window.localStorage.removeItem("token");
-        navigate("/login")
+        navigate("/login");
       } else {
       }
     });
@@ -29,7 +30,7 @@ const Logout = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        cursor:'pointer'
+        cursor: "pointer",
       }}
       className="logOut"
       onClick={willLogout}

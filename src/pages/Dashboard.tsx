@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box/Box";
 import Sidebar from "../components/Sidebar/Sidebar";
 
 export const Dashboard = () => {
