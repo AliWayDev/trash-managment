@@ -89,22 +89,6 @@ const SidebarFooter = () => {
           >
             <SettingMenu />
           </Menu>
-
-          {/* {isOpen ? (
-
-        ) : (
-          ""
-        )} */}
-
-          {/* <Box
-          sx={{
-            width: "60px",
-            height: "60px",
-            borderRadius: "50%",
-            backgroundColor: "white",
-          }}
-          onClick={handleOpen}
-        ></Box> */}
         </Box>
       </Paper>
     </Box>
