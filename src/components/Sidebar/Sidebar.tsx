@@ -1,9 +1,11 @@
-import { Box } from "@mui/material";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List/List";
+import ListItem from "@mui/material/ListItem/ListItem";
+import ListItemButton from "@mui/material/ListItemButton/ListItemButton";
+import ListItemText from "@mui/material/ListItemText/ListItemText";
 import { Image } from "mui-image";
+
+import SidebarFooter from "./SidebarFooter";
 
 const Sidebar: React.FC = () => {
   return (
@@ -12,6 +14,7 @@ const Sidebar: React.FC = () => {
         width: "260px",
         height: "100vh",
         borderRight: "1px solid #222",
+        position: "relative",
       }}
     >
       <Box
@@ -42,6 +45,9 @@ const Sidebar: React.FC = () => {
             </ListItemButton>
           </ListItem>
         </List>
+      </Box>
+      <Box className="sidebarFooter">
+        <SidebarFooter />
       </Box>
     </Box>
   );
