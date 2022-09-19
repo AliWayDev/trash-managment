@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { PrjoectItem } from "./ProjectItem/PrjoectItem";
 import { Projects } from "../../mock/Spaces";
 
