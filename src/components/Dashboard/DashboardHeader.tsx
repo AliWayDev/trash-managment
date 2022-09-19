@@ -1,6 +1,6 @@
-import React from "react";
 import Box from "@mui/material/Box/Box";
 import Avatar from "@mui/material/Avatar";
+import { Typography } from "@mui/material";
 
 const DashboardHeader = () => {
   return (
@@ -12,9 +12,9 @@ const DashboardHeader = () => {
           sx={{ width: 50, height: 50,  }}
         />
 
-        <h2 style={{ marginLeft: "34px" }}>Trash headshot</h2>
+        <Typography style={{ marginLeft: "34px", fontSize: '22px', fontWeight: 'bold' }}>Trash headshot</Typography>
         <span className="indicator"></span>
-        <p style={{ fontSize: "18px", color: "#0D6953" }}>32</p>
+        <Typography style={{ fontSize: "18px", color: "#0D6953" }}>32</Typography>
       </Box>
     </Box>
   );
