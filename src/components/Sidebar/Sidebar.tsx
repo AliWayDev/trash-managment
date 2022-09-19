@@ -4,6 +4,7 @@ import ListItem from "@mui/material/ListItem/ListItem";
 import ListItemButton from "@mui/material/ListItemButton/ListItemButton";
 import ListItemText from "@mui/material/ListItemText/ListItemText";
 import { Image } from "mui-image";
+import { Spaces } from "../Spaces/Spaces";
 
 import SidebarFooter from "./SidebarFooter";
 
@@ -46,6 +47,7 @@ const Sidebar: React.FC = () => {
           </ListItem>
         </List>
       </Box>
+      <Spaces />
       <Box className="sidebarFooter">
         <SidebarFooter />
       </Box>
