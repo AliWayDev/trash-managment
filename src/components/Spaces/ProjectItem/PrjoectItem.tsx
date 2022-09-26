@@ -1,6 +1,6 @@
-import { Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Typography, Box } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+
 import { ProjectSpaceItem } from "./ProjectSpaceItem/ProjectSpaceItem";
 import { IProjectItem } from "../../../shared/interfaces/spaces";
 
@@ -9,7 +9,7 @@ interface IProps {
   spaces: IProjectItem[];
 }
 
-export const PrjoectItem = (props: IProps) => {
+const ProjectItem = (props: IProps) => {
   const { name, spaces } = props;
 
   const projectItems = spaces.map((item) => (
@@ -56,3 +56,5 @@ export const PrjoectItem = (props: IProps) => {
     </Box>
   );
 };
+
+export default ProjectItem;

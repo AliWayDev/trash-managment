@@ -1,7 +1,5 @@
-import Box from "@mui/material/Box/Box";
-import Typography from "@mui/material/Typography/Typography";
-import TextField from "@mui/material/TextField/TextField";
-import Button from "@mui/material/Button/Button";
+import { Box, Typography, TextField, Button } from "@mui/material";
+
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
@@ -17,8 +15,6 @@ export const SignUp = () => {
       email: email.current?.value || "",
       password: password.current?.value || "",
     };
-
-    console.log(data);
   };
 
   return (

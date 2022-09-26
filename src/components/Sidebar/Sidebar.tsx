@@ -1,14 +1,17 @@
-import Box from "@mui/material/Box";
-import List from "@mui/material/List/List";
-import ListItem from "@mui/material/ListItem/ListItem";
-import ListItemButton from "@mui/material/ListItemButton/ListItemButton";
-import ListItemText from "@mui/material/ListItemText/ListItemText";
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
 import { Image } from "mui-image";
 import { Spaces } from "../Spaces/Spaces";
 
 import SidebarFooter from "./SidebarFooter";
 
 const Sidebar: React.FC = () => {
+  
   return (
     <Box
       sx={{
