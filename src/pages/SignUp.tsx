@@ -15,6 +15,8 @@ export const SignUp = () => {
       email: email.current?.value || "",
       password: password.current?.value || "",
     };
+
+    console.log(data);
   };
 
   return (
