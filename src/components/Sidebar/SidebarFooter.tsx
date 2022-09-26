@@ -1,26 +1,18 @@
 import React, { useState } from "react";
-import Box from "@mui/material/Box/Box";
-import Logout from "./Logout";
-import SettingMenu from "./SettingMenu";
-import Avatar from "@mui/material/Avatar/Avatar";
-import Menu from "@mui/material/Menu/Menu";
-import IconButton from "@mui/material/IconButton/IconButton";
-import Tooltip from "@mui/material/Tooltip/Tooltip";
-import Paper from "@mui/material/Paper";
-
+import { Box, Avatar, Menu, IconButton, Tooltip, Paper } from "@mui/material";
 import { Image } from "mui-image";
 
-const SidebarFooter = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+import Logout from "./Logout";
+import SettingMenu from "./SettingMenu";
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+const SidebarFooter: React.FC = () => {
+  const [menu, setMenu] = useState<null | HTMLElement>(null);
+  const isOpen = Boolean(menu);
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const handleOpen = (event: React.MouseEvent<HTMLElement>) =>
+    setMenu(event.currentTarget);
+
+  const handleClose = () => setMenu(null);
 
   return (
     <Box sx={{ position: "relative" }}>
@@ -41,12 +33,12 @@ const SidebarFooter = () => {
           >
             <Tooltip title="Account settings">
               <IconButton
-                onClick={handleClick}
+                onClick={handleOpen}
                 size="small"
                 sx={{ ml: 2 }}
-                aria-controls={open ? "account-menu" : undefined}
+                aria-controls={isOpen ? "account-menu" : undefined}
                 aria-haspopup="true"
-                aria-expanded={open ? "true" : undefined}
+                aria-expanded={isOpen ? "true" : undefined}
               >
                 <Avatar sx={{ width: 40, height: 40 }}>
                   <Image
@@ -65,11 +57,10 @@ const SidebarFooter = () => {
               right: "0",
               transition: "0.3s ease-in-out",
             }}
-            anchorEl={anchorEl}
+            anchorEl={menu}
             id="account-menu"
-            open={open}
+            open={isOpen}
             onClose={handleClose}
-            onClick={handleClose}
             PaperProps={{
               elevation: 0,
               sx: {

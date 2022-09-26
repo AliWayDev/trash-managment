@@ -1,21 +1,22 @@
-import React from "react";
+import { Box } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { useNavigate } from "react-router-dom";
+
 import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
 
-import Box from "@mui/material/Box";
-
-const Logout = () => {
+const Logout: React.FC = () => {
   const navigate = useNavigate();
 
   const logoutHandler = async () => {
-    await swal({
+    const swalConfig = {
       title: "Are you sure?",
       text: "Are you sure that you want to log-out from your profile?",
       icon: "warning",
       buttons: ["Cancel", "Ok!"],
       dangerMode: true,
-    }).then((logoutHandler: any) => {
+    };
+
+    await swal(swalConfig).then((logoutHandler: any) => {
       if (logoutHandler) {
         window.localStorage.removeItem("token");
         navigate("/login");
@@ -33,7 +34,7 @@ const Logout = () => {
       }}
       onClick={logoutHandler}
     >
-      <LogoutIcon sx={{ transform: "rotate(180deg)", marginRight: "8px" }} />{" "}
+      <LogoutIcon sx={{ transform: "rotate(180deg)", marginRight: "8px" }} />
     </Box>
   );
 };

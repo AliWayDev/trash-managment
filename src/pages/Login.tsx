@@ -1,7 +1,5 @@
-import Box from "@mui/material/Box/Box";
-import Typography from "@mui/material/Typography/Typography";
-import TextField from "@mui/material/TextField/TextField";
-import Button from "@mui/material/Button/Button";
+import { Box, TextField, Typography, Button } from "@mui/material";
+
 import { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -18,10 +16,12 @@ export const Login: React.FC = () => {
   const password = useRef<HTMLInputElement>();
 
   const login = () => {
-    fetch({
+    const config = {
       email: email.current?.value || "",
       password: password.current?.value || "",
-    });
+    };
+
+    fetch(config);
   };
 
   useEffect(() => {

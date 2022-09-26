@@ -2,7 +2,7 @@ import { Index } from "./routes/Index";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-function App() {
+const App: React.FC = () => {
   const navigate = useNavigate();
   let token: string | null = window.localStorage.getItem("token");
 
